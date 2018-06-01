@@ -87,7 +87,7 @@ def crawl(url, baseurl=None, links=[], level=0, exclude_base=False, silent=False
                             crawl(link_url, baseurl, links, level+1, exclude_base, silent)
             except:
                 if not silent:
-                    print("Crawl error: can't reach \"%s\"" % url)
+                    print("Crawl error: can't access / parse / crawl \"%s\"" % url)
     else:
         if not silent:
             print("Crawl error: \"%s\" failed the same-domain check!" % url)
