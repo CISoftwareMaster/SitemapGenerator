@@ -113,7 +113,7 @@ if __name__ == "__main__":
             silentmode = False
 
         # create the root of our sitemap
-        root = xml.Element("urlset")
+        root = xml.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
 
         # get current date
         date = datetime.now()
@@ -135,7 +135,7 @@ if __name__ == "__main__":
             # populate properties
             xml.SubElement(node, "loc").text = link.url
             xml.SubElement(node, "lastmod").text = moddate
-            xml.SubElement(node, "changeFreq").text = "monthly"
+            xml.SubElement(node, "changefreq").text = "monthly"
             xml.SubElement(node, "priority").text = str(1.0)
 
         # write our sitemap to file
